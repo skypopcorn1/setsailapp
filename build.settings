@@ -1,0 +1,47 @@
+--
+-- For more information on build.settings see the Corona SDK Build Guide at:
+-- http://docs.coronalabs.com/guide/distribution/buildSettings/index.html
+--
+--
+-- For more information on build.settings see the Project Build Settings Guide at:
+-- http://docs.coronalabs.com/guide/distribution/buildSettings/index.html
+--
+
+settings =
+{
+	orientation =
+	{
+		default = "portrait",
+		supported = { "portrait" }
+	},
+	android =
+	{
+		usesPermissions =
+		{
+			-- Permission to access the GPS.
+			"android.permission.ACCESS_FINE_LOCATION",
+
+			-- Permission to retrieve current location from WiFi or cellular service.
+			"android.permission.ACCESS_COARSE_LOCATION",
+		},
+	},
+	iphone =
+	{
+		xcassets = "Images.xcassets",
+		plist =
+		{
+			ITSAppUsesNonExemptEncryption = false,
+			NSLocationWhenInUseUsageDescription = "This app would like to use location services.",
+			UIStatusBarHidden = false,
+			UIApplicationExitsOnSuspend = true,
+			UILaunchStoryboardName = "LaunchScreen",
+		},
+	},
+	window =
+	{
+		titleText =
+		{
+			default = "Set Sail",
+		},
+	},
+}

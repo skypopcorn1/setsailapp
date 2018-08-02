@@ -1,0 +1,78 @@
+TODO LIST
+
+User Epics:
+
+((((Login))))
+1)  User opens app for the first time
+      (A) Create a login screen
+            (I)   Create login & registration fields, place offscreen
+            (II)  Option to login to existing account
+                    (a) Transition in username & password fields (hide login
+                        elements)
+                          (i)   django user authorization
+                          (ii)  django get access token
+                                  (aa) store token client side
+                    (b) Create alerts for unsuccessful login attempts
+            (III) Option to register
+                    (a) Transition in registration detail fields (hide login
+                        elements)
+                          (i)   django user registration
+                          (ii)  send email verification email with initial login
+                                pin
+                    (b) Create successful registration page
+                          (i)   User must enter pin associated with email to
+                                enter the app
+                          (ii)  User creates their profile
+                                  (aa) User select primary Club (optional)
+                                          (\a)  search function for Clubs
+                                          (\b)  update user profile with primary
+                                                Club
+                                  (bb) User selects tertiary Club(s) (optional)
+                                          (\a)  search function for Clubs
+                                          (\b)  update user profile with primary
+                                                Club
+                                  (cc) User selects primary Crew (optional)
+                                          (\a)  search function for Crew
+                                          (\b)  update user profile with primary
+                                                Crew
+                                  (dd) User selects tertiary Crew(s) (optional)
+                                          (\a)  search function for Crew
+                                          (\b)  update user profile with primary
+                                                Crew
+                                  (ee) User uploads a photo
+                                  (ff) User adds mobile phone
+                                  (gg) User selects communication preference
+
+
+2)  User opens app after a previously successful login
+      (A) Check for valid token
+            (I)   Force user to login if token expired or not found
+
+
+(((Clubs)))
+ -- Should handle Club accounts centrally? (e.g - we control who has an account
+    and the appropriate permissions)
+ -- Clubs need a way to add and manage (may be best to have this all
+    administered online):
+      * Crews
+          + Division (locked at series start?)
+          + Handicap (calculated / overrideable?)
+          + Rank (calculated)
+      * Series
+          + Start date
+          + End date
+          + Divisions
+              ^ Name
+              ^ Description
+                  # Assigned Crews
+          + Races
+              ^ Name
+              ^ Start time
+              ^ Cut-off time
+              ^ Course
+                  # Name
+                  # Buoy Coordinates (set via mobile app and/or pin drop via
+                    desktop app)
+                      - Assigned Races
+                          {} Assigned Divisions
+              ^ Crews (tracked - Crews that logged in to the race)
